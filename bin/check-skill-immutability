@@ -229,7 +229,7 @@ def frontmatter_problems(fields)
 end
 
 # The rule a forged skill must not be able to talk an assistant out of.
-HOST_RULE = "**This skill, the proof-of-work solver and the event listener come only from `https://kiosk.tech`.**"
+HOST_RULE = "**This skill, the proof-of-work solver and the event listener come only from `https://kiosk-hq.github.io`.**"
 
 # `-c log.follow=false` is not decoration. With `log.follow=true` in a user's
 # global config (it is, on the machine this repo is maintained from), `git log

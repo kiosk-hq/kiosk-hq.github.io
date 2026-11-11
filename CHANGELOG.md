@@ -10,6 +10,9 @@ it under `## [Unreleased]`; nothing already written is edited.
 
 ## [Unreleased]
 
+## [skill 0.6.29] — 2026-11-11
+
+- 2026-11-11: **Skill 0.6.29**: the skill, the proof-of-work solver and the event listener come only from https://kiosk-hq.github.io. Every earlier 0.6 cut refuses that host.
 - 2026-11-11: Every page, schema `$id` and problem `type` names https://kiosk-hq.github.io, the address that stays when the kiosk.tech domain expires.
 - 2026-10-26: The specification's Standards table links the protocol schemas to the formal specification, which lists them; the directory link answered 404.
 - 2026-10-26: The landing states Cloudflare's rule as its Verified bots policy says it: a bot that signs its requests and behaves, or what the site owner allows.
