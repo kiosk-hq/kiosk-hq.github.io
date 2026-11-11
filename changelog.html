@@ -30,10 +30,32 @@
   </style>
 </head>
 <body>
-<a href="/" class="back">← kiosk.tech</a>
+<a href="/" class="back">← kiosk-hq.github.io</a>
 <article>
   <h1>Changelog</h1>
-  <p>What each release changed, newest first. The specification, the skill and the reference implementation share one version number. Sources: <a href="https://github.com/kiosk-hq/kiosk.tech/blob/main/CHANGELOG.md">the site's changelog</a> and <a href="https://github.com/kiosk-hq/kiosk/blob/main/CHANGELOG.md">the reference implementation's changelog</a>.</p>
+  <p>What each release changed, newest first. The specification, the skill and the reference implementation share one version number. Sources: <a href="https://github.com/kiosk-hq/kiosk-hq.github.io/blob/main/CHANGELOG.md">the site's changelog</a> and <a href="https://github.com/kiosk-hq/kiosk/blob/main/CHANGELOG.md">the reference implementation's changelog</a>.</p>
+  <section id="v0.6.29">
+    <h2>0.6.29 <time datetime="2026-11-11">2026-11-11</time></h2>
+    <h3>Specification and skill</h3>
+    <ul>
+      <li><strong>Skill 0.6.29</strong>: the skill, the proof-of-work solver and the event listener come only from https://kiosk-hq.github.io. Every earlier 0.6 cut refuses that host.</li>
+      <li>Every page, schema <code>$id</code> and problem <code>type</code> names https://kiosk-hq.github.io, the address that stays when the kiosk.tech domain expires.</li>
+      <li>The specification&#39;s Standards table links the protocol schemas to the formal specification, which lists them; the directory link answered 404.</li>
+      <li>The landing states Cloudflare&#39;s rule as its Verified bots policy says it: a bot that signs its requests and behaves, or what the site owner allows.</li>
+      <li>The landing shows a screencast: Hermes, messaged over Telegram, orders a handwritten list at the grocery demo and pays.</li>
+    </ul>
+    <h3>Reference implementation</h3>
+    <ul>
+      <li><strong>Every gem and <code>API_VERSION</code> are 0.6.29, matching skill 0.6.29 on https://kiosk-hq.github.io; every demo pins its digest.</strong> <code>MIN_CLIENT</code> is 0.6.29: an older skill refuses that host.</li>
+      <li>kiosk-server: a problem <code>type</code> is https://kiosk-hq.github.io/problems/&lt;code&gt;. auth.md, the OpenAPI document, the toll hint and a schema refusal link that host.</li>
+      <li>Every link to the Kiosk site names https://kiosk-hq.github.io, the gem homepages included. A flaw in the specification is reported at kiosk-hq/kiosk-hq.github.io.</li>
+      <li>deploy: the root README, deploy/README.md and rollout.sh agree on the env values an operator supplies; deploy/README.md lists them, the database passwords included.</li>
+      <li>deploy: CHECKLIST.md drops the done prove-to-proveli move; kyc-pairing-audit.sh calls <code>KIOSK_PROVELI_&lt;OP&gt;_SECRET</code> the broker&#39;s name and takes <code>--fix-names</code>.</li>
+      <li>kiosk-server, kiosk-core and kiosk-kyc-proveli: the KYC example passes the operator&#39;s own broker <code>url:</code>; the default demo broker serves only the Kiosk demos.</li>
+      <li>kiosk-demo-philslist and kiosk-demo-tudu: every public text an assistant writes has a maximum length, in the action&#39;s input schema and in the model.</li>
+    </ul>
+  </section>
+
   <section id="v0.6.28">
     <h2>0.6.28 <time datetime="2026-10-26">2026-10-26</time></h2>
     <h3>Specification and skill</h3>
