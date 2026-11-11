@@ -123,7 +123,7 @@
 #      agentskills.io frontmatter rules, and the host rule near the top.
 #      Reads the files, not git, so it is the same answer locally and in CI.
 #   4. PROSE AT REST — every published sentence that states WHICH cut is
-#      current, every example `https://kiosk.tech/skill-v*.md` pin, and the
+#      current, every example `https://kiosk-hq.github.io/skill-v*.md` pin, and the
 #      cut table in skills.md, all against the cuts on disk. No version number
 #      appears in this script: the expectations are derived, so the next bump
 #      moves the gate with it.
@@ -381,9 +381,9 @@ end
 # ── Pass 3: the alias, at rest (K-847) ───────────────────────────────────────
 #
 # The two sentences this enforces are NORMATIVE text on a published site:
-#   specification.html  "`https://kiosk.tech/skill.md` is the "latest" alias,
+#   specification.html  "`https://kiosk-hq.github.io/skill.md` is the "latest" alias,
 #                        byte-identical to the newest version file"
-#   skill.md            "`https://kiosk.tech/skill.md` is the "latest" alias
+#   skill.md            "`https://kiosk-hq.github.io/skill.md` is the "latest" alias
 #                        with identical content"
 # Phil's K-847 answer was to keep them and make them true, which turns them into
 # a build invariant: a skill edit is not finished until a cut carries it and the
@@ -453,7 +453,7 @@ end
 #       first cut to the one immediately before the newest
 #   R3  «A-B (cuts) describe protocol S-T» spans the oldest cut to the last cut
 #       before the newest series
-#   R4  every `https://kiosk.tech/skill-vX.Y.Z.md` URL — a PIN, something a
+#   R4  every `https://kiosk-hq.github.io/skill-vX.Y.Z.md` URL — a PIN, something a
 #       reader copies — names the newest cut
 #   R5  every `skill-vX.Y.Z.md` named anywhere names a cut that EXISTS
 #   R6  the cut table in skills.md carries a row for every cut on the newest
@@ -621,7 +621,7 @@ CUT_TABLE = "skills.md"
 # placeholders this site writes on purpose (`skill-vX.Y.Z.md`,
 # `skill-vMAJOR.MINOR.PATCH.md`) must not be read as versions.
 NAMED_CUT = /skill-v(\d+(?:\.\d+)+)\.md/
-PIN_URL   = %r{https://kiosk\.tech/skill-v(\d+(?:\.\d+)+)\.md}
+PIN_URL   = %r{https://kiosk-hq\.github\.io/skill-v(\d+(?:\.\d+)+)\.md}
 
 # A sentence stating which cut is current.
 CURRENT_CLAIM = /
@@ -1147,7 +1147,7 @@ def prose_failures(path, raw, ctx)
     hits |= [:pin_url]
     next if named == ctx.newest_version
 
-    fails << "#{path}: pins https://kiosk.tech/skill-v#{named}.md; the newest cut is " \
+    fails << "#{path}: pins https://kiosk-hq.github.io/skill-v#{named}.md; the newest cut is " \
              "#{ctx.newest_cut}. A URL here is an EXAMPLE AN OPERATOR COPIES, so it must name " \
              "the cut this site would have them pin today. (A bare `skill-v#{named}.md` in " \
              "prose is history and is left alone — only the URL form is checked, and in " \
@@ -1440,13 +1440,13 @@ def self_test_prose_cases
     ["R3 earlier-protocols range, at head",
      "spec/protocol.md", "the 0.1.1-0.3.11 cuts describe protocol 0.1-0.3", :green],
     ["R4 pin URL, stale",
-     "specification.html", %({ "url": "https://kiosk.tech/skill-v0.4.3.md" }), :red],
+     "specification.html", %({ "url": "https://kiosk-hq.github.io/skill-v0.4.3.md" }), :red],
     ["R4 pin URL in skills.md PROSE, stale (K-1227)",
-     "skills.md", "Adopt https://kiosk.tech/skill-v0.4.3.md today.", :red],
+     "skills.md", "Adopt https://kiosk-hq.github.io/skill-v0.4.3.md today.", :red],
     ["R4 pin URL in a skills.md TABLE ROW is history",
-     "skills.md", "| `skill-v0.4.3.md` | **0.4** | https://kiosk.tech/skill-v0.4.3.md |\n", :green],
+     "skills.md", "| `skill-v0.4.3.md` | **0.4** | https://kiosk-hq.github.io/skill-v0.4.3.md |\n", :green],
     ["R4 pin URL in CHANGELOG.md is history",
-     "CHANGELOG.md", "- 2026-08-27: re-pinned https://kiosk.tech/skill-v0.4.3.md in the same wave.\n", :green],
+     "CHANGELOG.md", "- 2026-08-27: re-pinned https://kiosk-hq.github.io/skill-v0.4.3.md in the same wave.\n", :green],
     ["R5 a cut name nobody publishes",
      "specification.html", "pin skill-v9.9.9.md", :red],
     ["R5 a bare historical cut name is left alone",

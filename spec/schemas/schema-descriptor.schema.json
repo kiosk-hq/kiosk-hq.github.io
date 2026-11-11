@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://kiosk.tech/spec/schemas/schema-descriptor.schema.json",
+  "$id": "https://kiosk-hq.github.io/spec/schemas/schema-descriptor.schema.json",
   "title": "Kiosk schema descriptor",
   "description": "The body of the unauthenticated GET <endpoint>/schema: the origin's verbs and their contracts. The root is CLOSED. The module set is in `capabilities` in /.well-known/kiosk.json.",
   "type": "object",

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://kiosk.tech/spec/schemas/event.schema.json",
+  "$id": "https://kiosk-hq.github.io/spec/schemas/event.schema.json",
   "title": "Kiosk event",
   "description": "One message the operator pushes on the event stream at <endpoint>/events. The root is CLOSED: an event carries the five members declared here. The topic's `payload_schema` in the catalog gives the shape of `data`. `$defs` holds the two other messages of a subscription: `subscribed` and `unsubscribed`.",
   "type": "object",

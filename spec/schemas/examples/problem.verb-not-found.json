@@ -1,5 +1,5 @@
 {
-  "type": "https://kiosk.tech/problems/verb_not_found",
+  "type": "https://kiosk-hq.github.io/problems/verb_not_found",
   "title": "No such verb",
   "status": 404,
   "detail": "unknown query 'listings'",

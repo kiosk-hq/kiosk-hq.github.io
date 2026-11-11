@@ -31,7 +31,7 @@ chkfail() {
 }
 # thin wrapper schema so an example can be checked against a specific $def
 ref() { printf '{"$ref":"%s"}\n' "$2" >|"$TMP/$1.json"; echo "$TMP/$1.json"; }
-B="https://kiosk.tech/spec/schemas"
+B="https://kiosk-hq.github.io/spec/schemas"
 
 echo "== compile schemas =="
 chk compile "${F[@]}" -s discovery.schema.json
@@ -123,7 +123,7 @@ echo "== reject what the schemas must refuse =="
 # accepted sibling with that ONE array carrying verb names instead, so the only
 # thing that can make it pass is the enum going soft.
 chkfail validate "${F[@]}" -s discovery.schema.json -d examples/rejected/discovery.verb-names.json
-# A skill pin names a cut on kiosk.tech and on no other host (Section 15.6 of
+# A skill pin names a cut on kiosk-hq.github.io and on no other host (Section 15.6 of
 # the formal spec). This sibling differs only in the host of `skill.url`.
 chkfail validate "${F[@]}" -s discovery.schema.json -d examples/rejected/discovery.foreign-skill-host.json
 # The `code` vocabulary is CLOSED, and an enum that is never tested against a

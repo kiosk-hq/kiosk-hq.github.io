@@ -19,7 +19,7 @@ once.
 
 | The flaw is in | File it in |
 | --- | --- |
-| the **specification** — a normative rule, the formal spec, a JSON Schema, a skill cut, a problem page, either served copy of the solver | [`kiosk-hq/kiosk.tech`](https://github.com/kiosk-hq/kiosk.tech/issues), this repository |
+| the **specification** — a normative rule, the formal spec, a JSON Schema, a skill cut, a problem page, either served copy of the solver | [`kiosk-hq/kiosk-hq.github.io`](https://github.com/kiosk-hq/kiosk-hq.github.io/issues), this repository |
 | the **implementation** — a gem, a demo application, the e2e harness, a deploy runbook | [`kiosk-hq/kiosk`](https://github.com/kiosk-hq/kiosk/issues) |
 
 If a flaw is in both — the spec permits something an engine should not do, or

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://kiosk.tech/spec/schemas/binding.schema.json",
+  "$id": "https://kiosk-hq.github.io/spec/schemas/binding.schema.json",
   "title": "Kiosk account binding -- claim and link",
   "description": "The protocol objects of Section 6, the one-time ceremonies that bind a registered AI assistant to an existing operator account: claim, an RFC 8628 device grant, and link. Both need the human's approval and a client assertion by the registered key. The two /oauth/* requests are form-encoded and have no schema here; their answers are in auth.schema.json.",
   "$defs": {
@@ -45,11 +45,11 @@
       }
     },
     "deviceTokenResponse": {
-      "$ref": "https://kiosk.tech/spec/schemas/auth.schema.json#/$defs/tokenResponse",
+      "$ref": "https://kiosk-hq.github.io/spec/schemas/auth.schema.json#/$defs/tokenResponse",
       "description": "Section 6.1 step 3: the success answer to the device-code poll of POST <endpoint>/oauth/token. `scope` is the approving human's role."
     },
     "oauthError": {
-      "$ref": "https://kiosk.tech/spec/schemas/auth.schema.json#/$defs/oauthError",
+      "$ref": "https://kiosk-hq.github.io/spec/schemas/auth.schema.json#/$defs/oauthError",
       "description": "Section 6.1: the error answer of both /oauth/* endpoints, the one error shape in this protocol that is not an RFC 9457 problem document."
     },
     "linkCode": {

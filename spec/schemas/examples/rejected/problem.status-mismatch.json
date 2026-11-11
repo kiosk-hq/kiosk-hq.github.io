@@ -1,5 +1,5 @@
 {
-  "type": "https://kiosk.tech/problems/conflict",
+  "type": "https://kiosk-hq.github.io/problems/conflict",
   "title": "State conflict",
   "status": 410,
   "detail": "the new key is registered already",

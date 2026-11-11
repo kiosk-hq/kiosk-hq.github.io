@@ -1,7 +1,7 @@
 # Kiosk Descriptor House Style
 
 **Companion to** the formal specification's Section 8.3 (the `schema` verb) --
-<https://kiosk.tech/spec/protocol.md>. A descriptor carries `description`,
+<https://kiosk-hq.github.io/spec/protocol.md>. A descriptor carries `description`,
 `input_schema`, `output_schema`, `example_params` and `example_row`; this
 document says how to write them WELL, so a cold AI assistant can drive your
 origin from the `schema` catalog alone, with no hardcoded knowledge and no

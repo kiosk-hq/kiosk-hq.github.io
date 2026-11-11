@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://kiosk.tech/spec/schemas/pow.schema.json",
+  "$id": "https://kiosk-hq.github.io/spec/schemas/pow.schema.json",
   "title": "Kiosk proof-of-work",
   "description": "The PoW challenge object (issued in a pow_required 402) and the proof(s) an agent returns in the Kiosk-PoW request header (raw JSON) on retry.",
   "$ref": "#/$defs/powHeader",

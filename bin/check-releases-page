@@ -129,10 +129,10 @@ def page(site_text, reference_text)
       </style>
     </head>
     <body>
-    <a href="/" class="back">← kiosk.tech</a>
+    <a href="/" class="back">← kiosk-hq.github.io</a>
     <article>
       <h1>Changelog</h1>
-      <p>What each release changed, newest first. The specification, the skill and the reference implementation share one version number. Sources: <a href="https://github.com/kiosk-hq/kiosk.tech/blob/main/CHANGELOG.md">the site's changelog</a> and <a href="https://github.com/kiosk-hq/kiosk/blob/main/CHANGELOG.md">the reference implementation's changelog</a>.</p>
+      <p>What each release changed, newest first. The specification, the skill and the reference implementation share one version number. Sources: <a href="https://github.com/kiosk-hq/kiosk-hq.github.io/blob/main/CHANGELOG.md">the site's changelog</a> and <a href="https://github.com/kiosk-hq/kiosk/blob/main/CHANGELOG.md">the reference implementation's changelog</a>.</p>
     #{body}</article>
     </body>
     </html>

@@ -1,7 +1,7 @@
 # Published Kiosk skill cuts
 
-`https://kiosk.tech/skill.md` is the **latest** alias and always has the same
-bytes as the newest cut below. `https://kiosk.tech/skill-vX.Y.Z.md` files are
+`https://kiosk-hq.github.io/skill.md` is the **latest** alias and always has the same
+bytes as the newest cut below. `https://kiosk-hq.github.io/skill-vX.Y.Z.md` files are
 **immutable**: a published cut is never edited, and every change ships a new
 file. An operator's `/.well-known/kiosk.json` `skill` pin is one of these URLs
 plus its SHA-256, so a pin cannot drift by construction.

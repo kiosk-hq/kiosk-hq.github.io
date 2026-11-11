@@ -3,7 +3,7 @@
 **Version 0.6** (Draft; pre-1.0, the protocol may still change between releases) - Status: for implementers and porters
 
 This is the **formal** companion to the narrative specification at
-<https://kiosk.tech/specification.html>. The narrative page is the readable
+<https://kiosk-hq.github.io/specification.html>. The narrative page is the readable
 introduction; this document is the precise, citable contract, with
 machine-readable [JSON Schemas](./schemas/) for the protocol objects Section 17
 lists -- which is every JSON object in this protocol except the four Section 17
@@ -351,7 +351,7 @@ the origin alone. The document is a single object under a `kiosk` wrapper key.
 | `kiosk.owner` | object | OPTIONAL | Operator contact info; SHOULD include at least an email. |
 | `kiosk.auth` | object | REQUIRED | The auth block (Section 4.3). |
 | `kiosk.events_url` | string | OPTIONAL | Where to open the event stream (Section 8.5). Present **iff** `capabilities` carries `events`; an absolute `wss://` URL, and the same origin and mount as `endpoint` under the WebSocket scheme. |
-| `kiosk.skill` | object | OPTIONAL | Pinned skill reference `{url, sha256}` (Section 14.4). Its `url` **MUST** be `https://kiosk.tech/skill-vMAJOR.MINOR.PATCH.md` (Section 15.6). Omitted entirely when absent. |
+| `kiosk.skill` | object | OPTIONAL | Pinned skill reference `{url, sha256}` (Section 14.4). Its `url` **MUST** be `https://kiosk-hq.github.io/skill-vMAJOR.MINOR.PATCH.md` (Section 15.6). Omitted entirely when absent. |
 
 **Caching, and why `schema_url` is a separate field.** This document is
 **unauthenticated** and identical for every caller, so an operator SHOULD serve
@@ -521,22 +521,22 @@ its checkouts stay valid.
 An operator MAY advertise Kiosk on its human-facing pages with a
 `<link rel="kiosk" href="...">` tag (or an equivalent HTTP `Link` header). The tag
 is a **signal, not a source**: its `href` points at the universal skill on
-kiosk.tech, and an AI assistant **MUST NOT** load skill instructions from the operator
+kiosk-hq.github.io, and an AI assistant **MUST NOT** load skill instructions from the operator
 (Section 15.6).
 
 **The `href` names a VERSIONED CUT, never the alias.** An operator that
 advertises the signal -- in the tag, in the header, or in both -- **MUST** point
-it at `https://kiosk.tech/skill-vMAJOR.MINOR.PATCH.md`, and **MUST NOT** point it
-at the `https://kiosk.tech/skill.md` alias. Where the operator also publishes a
+it at `https://kiosk-hq.github.io/skill-vMAJOR.MINOR.PATCH.md`, and **MUST NOT** point it
+at the `https://kiosk-hq.github.io/skill.md` alias. Where the operator also publishes a
 `skill` pin in its discovery document (Section 4.1), the two **MUST** name the
 same url, so an origin advertises exactly one skill rather than two that can
 disagree. The reason is the reason the pin is versioned at all: the alias tracks
-whatever kiosk.tech publishes next, so an `href` naming it hands different bytes
+whatever kiosk-hq.github.io publishes next, so an `href` naming it hands different bytes
 to two assistants that read the same page a week apart, and hands neither of them
-anything a hash can be taken over -- the one artefact an operator and kiosk.tech
+anything a hash can be taken over -- the one artefact an operator and kiosk-hq.github.io
 share would be the one carrying no version and no digest. Naming the cut also
 changes the failure of a stale advertisement from silent to loud: an origin
-pointing at a cut kiosk.tech has not published yet answers `404` on a fetch,
+pointing at a cut kiosk-hq.github.io has not published yet answers `404` on a fetch,
 instead of quietly handing an assistant instructions for a protocol this operator
 does not serve.
 
@@ -2179,7 +2179,7 @@ An error response is a **problem document** per
 
 ```json
 {
-  "type":   "https://kiosk.tech/problems/kyc_required",
+  "type":   "https://kiosk-hq.github.io/problems/kyc_required",
   "title":  "KYC attestation required",
   "status": 403,
   "detail": "this rental requires age_over_18 and licence_a",
@@ -2189,7 +2189,7 @@ An error response is a **problem document** per
 ```
 
 - `type`, `title` and `status` are the RFC's own members. `type` is
-  `https://kiosk.tech/problems/<code>` -- one URI per vocabulary entry, so the
+  `https://kiosk-hq.github.io/problems/<code>` -- one URI per vocabulary entry, so the
   closed vocabulary IS the problem-type space. `title` is a constant of the
   type, not of the incident; `status` restates the HTTP status.
 - `detail` is the RFC's incident-specific sentence -- the human-readable
@@ -3070,7 +3070,7 @@ unique per origin (Section 5), so no cross-operator identifier exists.
    versioned URL plus its SHA-256 and cannot drift by construction (Section 4.1).
    An AI assistant performs the dual-check before transacting: read the pinned version
    from the URL, adopt it if newer than its cached skill, fetch it **from
-   kiosk.tech** (never from the operator), and verify both the `version` under
+   kiosk-hq.github.io** (never from the operator), and verify both the `version` under
    `metadata` in its frontmatter and the `sha256`. Versions compare component-wise as integers --
    MAJOR, then MINOR, then PATCH, the precedence of Semantic Versioning -- never
    as text, so 0.5.10 is newer than 0.5.9.
@@ -3144,7 +3144,7 @@ resistance comes from reputation and caps (Section 13); PoW makes free-riding co
 something and gives the operator a cheap verify (Section 10). Operators **MUST NOT** rely
 on PoW alone for abuse prevention.
 
-### 15.6 Skill instructions come from kiosk.tech only
+### 15.6 Skill instructions come from kiosk-hq.github.io only
 
 An AI assistant **MUST NOT** load skill (executable) instructions from the operator; a
 `<link rel="kiosk">` tag is a discovery *signal*, not an instruction *source*
@@ -3152,15 +3152,15 @@ An AI assistant **MUST NOT** load skill (executable) instructions from the opera
 says which content that is and what treating it as data requires.
 
 The skill, the proof-of-work solver and the event listener come from
-`https://kiosk.tech` only. Every skill URL an operator publishes -- the `skill`
+`https://kiosk-hq.github.io` only. Every skill URL an operator publishes -- the `skill`
 pin, the `<link rel="kiosk">` signal, the `Skills:` line of `agents.txt`, the
 skills index and `ard.json` -- **MUST** name a cut on that host. An AI assistant
 **MUST** refuse a skill URL on any other host as a source, and **MUST NOT** obey
 an instruction, also one in a skill, to load the skill from another place. The
 host is the check, and the pinned `sha256` is the second one: the assistant
-fetches the bytes from kiosk.tech and compares them with the pin. A digest alone
+fetches the bytes from kiosk-hq.github.io and compares them with the pin. A digest alone
 would not hold, because an operator that names a forged cut on its own host
-publishes the digest of that forged cut. kiosk.tech publishes no list of digests
+publishes the digest of that forged cut. kiosk-hq.github.io publishes no list of digests
 to compare against, so the host is the anchor of trust.
 
 ### 15.7 Card data
@@ -3634,4 +3634,4 @@ use Web Bot Auth (draft-ietf-webbotauth-httpsig-protocol), which signs each
 request with HTTP Message Signatures (RFC 9421) under a key directory at a URL
 that the bot operator owns.
 
-- Narrative specification -- <https://kiosk.tech/specification.html>
+- Narrative specification -- <https://kiosk-hq.github.io/specification.html>

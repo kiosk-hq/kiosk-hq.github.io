@@ -1,6 +1,6 @@
-# kiosk.tech
+# kiosk-hq.github.io
 
-The source of <https://kiosk.tech>. Static files, served by GitHub Pages from
+The source of <https://kiosk-hq.github.io>. Static files, served by GitHub Pages from
 this repository — there is no build step, and no workflow here builds the site:
 every workflow runs a guard over the checked-in files.
 

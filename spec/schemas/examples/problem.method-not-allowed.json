@@ -1,5 +1,5 @@
 {
-  "type": "https://kiosk.tech/problems/method_not_allowed",
+  "type": "https://kiosk-hq.github.io/problems/method_not_allowed",
   "title": "Method not allowed",
   "status": 405,
   "detail": "\"create_order\" is an action, not a query",

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://kiosk.tech/spec/schemas/kyc.schema.json",
+  "$id": "https://kiosk-hq.github.io/spec/schemas/kyc.schema.json",
   "title": "Kiosk KYC attestation",
   "description": "The decoded JWS payload of a KYC attestation, the POST /kiosk/agents/kyc request body, the request_kyc answer, the body that the KYC provider posts to the callback and its answer, and the data of the kyc_verification event that delivers the attestation.",
   "$defs": {

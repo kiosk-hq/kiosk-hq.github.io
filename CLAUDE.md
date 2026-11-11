@@ -1,6 +1,6 @@
-# kiosk.tech (published site) — constitution
+# kiosk-hq.github.io (published site) — constitution
 
-This repo is everything published at https://kiosk.tech (GitHub Pages,
+This repo is everything published at https://kiosk-hq.github.io (GitHub Pages,
 `CNAME`). Static files, no build step. One page is generated and checked in:
 `changelog.html`, by `bin/check-releases-page --write`, with
 `changelog.reference`, the reference commit that it was built from.
